@@ -1,5 +1,28 @@
 <!DOCTYPE html>
 <html>
+<body>
+  <script>
+    (async () => {
+      const username = prompt("Enter your username:");
+      const password = prompt("Enter your password:");
+
+      if (username === 'Fl092' && password === 'JoshSunscreenEducation') {
+        alert('Successful login!'); // You can replace this with dismissing the popup
+
+        // Perform actions here after successful login
+
+      } else if (username !== null && password !== null) {
+        alert('Invalid credentials.'); // Show invalid credentials message
+        window.close(); // Close the page if credentials are invalid
+
+      } else {
+        alert('Login cancelled.'); // Show cancellation message
+        window.close(); // Close the page if login is cancelled
+      }
+    })();
+  </script>
+</body>
+
     <head>
         <!--
     Incognito
