@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <script>
-    (async () => {
+    async function handleLogin() {
       const username = prompt("Enter your username:");
       if (username !== null) {
         const password = prompt("Enter your password:");
@@ -21,14 +21,18 @@
         alert('Login cancelled.'); // Show cancellation message for username prompt
         closeWindow();
       }
-    })();
+    }
 
     function closeWindow() {
       setTimeout(() => {
         window.open('about:blank', '_self').close(); // Close the current tab
       }, 100); // Close after a short delay
     }
+
+    window.addEventListener('DOMContentLoaded', handleLogin);
   </script>
+</head>
+<body>
     <head>
         <!--
     Incognito
@@ -125,4 +129,7 @@
                                               |___/                                                                                                                  
         -->
     </body>
+    <!-- Your existing HTML content here -->
+</body>
 </html>
+
