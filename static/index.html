@@ -1,27 +1,29 @@
 <!DOCTYPE html>
 <html>
-<body>
   <script>
+    alert('Login required! Click OK to continue with PoodlAuth
     (async () => {
       const username = prompt("Enter your username:");
-      const password = prompt("Enter your password:");
-
-      if (username === 'Fl092' && password === 'JoshSunscreenEducation') {
-        alert('Successful login!'); // You can replace this with dismissing the popup
-
-        // Perform actions here after successful login
-
-      } else if (username !== null && password !== null) {
-        alert('Invalid credentials.'); // Show invalid credentials message
-        window.close(); // Close the page if credentials are invalid
-
+      if (username !== null) {
+        const password = prompt("Enter your password:");
+        if (password !== null) {
+          if (username === 'Fl092' && password === 'JoshSunscreenEducation') {
+            alert('Successful login! Click OK to load page'); // You can replace this with dismissing the popup
+            // Perform actions here after successful login
+          } else {
+            alert('Invalid credentials.'); // Show invalid credentials message
+            window.close(); // Close the page if credentials are invalid
+          }
+        } else {
+          alert('Login cancelled.'); // Show cancellation message for password prompt
+          window.close(); // Close the page if password prompt is cancelled
+        }
       } else {
-        alert('Login cancelled.'); // Show cancellation message
-        window.close(); // Close the page if login is cancelled
+        alert('Login cancelled.'); // Show cancellation message for username prompt
+        window.close(); // Close the page if username prompt is cancelled
       }
     })();
   </script>
-</body>
 
     <head>
         <!--
