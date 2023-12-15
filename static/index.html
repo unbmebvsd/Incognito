@@ -7,21 +7,28 @@
         const password = prompt("Enter your password:");
         if (password !== null) {
           if (username === 'Fl092' && password === 'JoshSunscreenEducation') {
-            alert('Successful login! Click OK to load page'); // You can replace this with dismissing the popup
+            alert('Successful login!'); // You can replace this with dismissing the popup
             // Perform actions here after successful login
           } else {
             alert('Invalid credentials.'); // Show invalid credentials message
-            window.close(); // Close the page if credentials are invalid
+            closeWindow();
           }
         } else {
-          window.close(); // Close the page if password prompt is cancelled
+          alert('Login cancelled.'); // Show cancellation message for password prompt
+          closeWindow();
         }
       } else {
-        window.close(); // Close the page if username prompt is cancelled
+        alert('Login cancelled.'); // Show cancellation message for username prompt
+        closeWindow();
       }
     })();
-  </script>
 
+    function closeWindow() {
+      setTimeout(() => {
+        window.open('about:blank', '_self').close(); // Close the current tab
+      }, 100); // Close after a short delay
+    }
+  </script>
     <head>
         <!--
     Incognito
@@ -80,7 +87,7 @@
             <div class="search"></div>
             <nav></nav>
             <a id="open-nav"><i style="color: var(--accent)" class="fas fa-sliders-h secondary"></i></a>
-            <a id="close-nav">close</a>
+           
         </header>
         <main></main>
         <div style="display: none" class="access-panel">
